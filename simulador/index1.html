@@ -67,7 +67,7 @@
 
                 <div class="form-group">
                     <label for="loanRange">Monto:</label>
-                    <input type="range" id="loanRange"  oninput="updateAmountDisplay(this.value)">
+                    <input type="range" id="loanRange"  step="1" oninput="updateAmountDisplay(this.value)">
                     <div class="range-labels">
                         <span id="minAmountLabel">Monto mínimo:</span>
                         <span id="maxAmountLabel">Monto máximo:</span>
@@ -77,7 +77,7 @@
 
                 <div class="form-group">
                     <label for="loanTerm">Plazo (meses):</label>
-                    <input type="range" id="loanTerm"  oninput="updateTermDisplay(this.value)">
+                    <input type="range" id="loanTerm" step="1" oninput="updateTermDisplay(this.value)">
                     <div class="range-labels">
                         <span id="minTermLabel">Plazo mínimo:</span>
                         <span id="maxTermLabel">Plazo máximo:</span>

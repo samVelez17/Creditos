@@ -55,11 +55,13 @@
                     <option value="annually">Anual</option>
                 </select>
             </div>
+
             <div class="form-group">
                 <label for="loanTerm">Plazo (meses):</label>
-                <input type="range" id="loanTerm" min="1" max="120" step="1" value="24" oninput="updateTermDisplay(this.value)">
+                <input type="range" id="loanTerm" min="1" max="24" step="1"  oninput="updateTermDisplay(this.value)">
                 <span id="termDisplay">24 meses</span>
             </div>
+            
             <div class="form-group">
                 <label for="paymentAmount">Monto que desea pagar ($):</label>
                 <input type="number" id="paymentAmount" min="1000" max="100000" placeholder="Ej. 5000">
@@ -69,7 +71,7 @@
         </div>
     </div>
     
-        <script src="calculos.js"></script>
+        <script src="script.js"></script>
     </main>
 </body>
     </html>

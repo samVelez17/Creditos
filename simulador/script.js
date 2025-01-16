@@ -63,8 +63,14 @@ productSelector.addEventListener('change', event => {
         loanTermRange.max = selectedProduct.plazo_max;
         loanTermRange.value = selectedProduct.plazo_min;
 
-        document.getElementById('minAmountLabel').textContent = `Monto mínimo: $${selectedProduct.monto_min}`;
-        document.getElementById('maxAmountLabel').textContent = `Monto máximo: $${selectedProduct.monto_max}`;
+        const formatter = new Intl.NumberFormat('es-MX', {
+            style: 'currency',
+            currency: 'MXN',
+        });
+        
+        document.getElementById('minAmountLabel').textContent = `Monto mínimo: ${formatter.format(selectedProduct.monto_min)}`;
+        document.getElementById('maxAmountLabel').textContent = `Monto máximo: ${formatter.format(selectedProduct.monto_max)}`;
+        
         document.getElementById('minTermLabel').textContent = `Plazo mínimo: ${selectedProduct.plazo_min} meses`;
         document.getElementById('maxTermLabel').textContent = `Plazo máximo: ${selectedProduct.plazo_max} meses`;
 
@@ -82,9 +88,21 @@ loanTermRange.addEventListener('input', event => {
 });
 
 function updateAmountDisplay(value) {
-    document.getElementById('selectedAmount').textContent = `${value}`;
+    const formatter = new Intl.NumberFormat
+    ('es-MX', 
+    {
+        style: 'currency',
+        currency: 'MXN',
+    });
+
+    document.getElementById('selectedAmount').textContent = formatter.format(value);
 }
+
 
 function updateTermDisplay(value) {
     document.getElementById('selectedTerm').textContent = `${value} meses`;
+}
+
+function updateTermDisplay(value) {
+    document.getElementById('termDisplay').textContent = `${value} meses`;
 }
