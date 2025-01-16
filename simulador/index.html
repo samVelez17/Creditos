@@ -1,0 +1,77 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simulador de Crédito</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    <main>
+    <div>
+        <h1>Simulador de Crédito</h1>
+    </div>
+
+
+    <div class="form-group">
+        <label for="personType">Seleccione un tipo de Persona</label>
+       
+    </div>
+    
+    <div class="form-group" style="display: flex; justify-content: space-between;">
+      <button type="button" style="width: 48%;" onclick="window.location.href='index1.html';">Persona Moral</button>
+
+      
+    <button type="button" style="width: 48%;">Persona Fisica</button>
+    </div>
+
+    <div class="form-container">
+        <!-- Primer formulario: Datos del Representante del Préstamo -->
+        <div class="container-form">
+            <h3>Datos del Representante del Préstamo</h3>
+            <div class="form-group">
+                <label for="representativeName">Nombre del Representante:</label>
+                <input type="text" id="representativeName" placeholder="Ej. Juan Pérez" required>
+            </div>
+            <div class="form-group">
+                <label for="representativeEmail">Correo Electrónico:</label>
+                <input type="email" id="representativeEmail" placeholder="ejemplo@correo.com" required>
+            </div>
+            <div class="form-group">
+                <label for="representativePhone">Teléfono del Representante:</label>
+                <input type="tel" id="representativePhone" placeholder="Ej. +521234567890" required>
+            </div>
+        </div>
+    
+        <!-- Segundo formulario: Detalles del Crédito -->
+        <div class="container-form">
+            <h3 clas="TxtCalulo">Detalles del Cálculo</h3>
+            <div class="form-group">
+                <label for="loanAmount">Monto del Crédito ($):</label>
+                <input type="number" id="loanAmount" placeholder="Ej. 50000" min="1" max="100000">
+            </div>
+            <div class="form-group">
+                <label for="paymentFrequency">Frecuencia de pago:</label>
+                <select id="paymentFrequency">
+                    <option value="monthly">Mensual</option>
+                    <option value="quarterly">Trimestral</option>
+                    <option value="annually">Anual</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="loanTerm">Plazo (meses):</label>
+                <input type="range" id="loanTerm" min="1" max="120" step="1" value="24" oninput="updateTermDisplay(this.value)">
+                <span id="termDisplay">24 meses</span>
+            </div>
+            <div class="form-group">
+                <label for="paymentAmount">Monto que desea pagar ($):</label>
+                <input type="number" id="paymentAmount" min="1000" max="100000" placeholder="Ej. 5000">
+            </div>
+            <button onclick="calculateLoan()">Calcular</button>
+            <div id="result" class="result" style="display: none;"></div>
+        </div>
+    </div>
+    
+        <script src="calculos.js"></script>
+    </main>
+</body>
+    </html>
