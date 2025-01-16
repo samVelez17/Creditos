@@ -1,28 +1,24 @@
-/* Contenedor principal de los dos formularios */
 .form-container {
-    display: flex; /* Usamos flexbox para alinearlos horizontalmente */
-    justify-content: space-between; /* Espacio entre los formularios */
-    gap: 20px; /* Espacio entre los formularios */
+    display: flex; 
+    justify-content: space-between; 
+    gap: 20px; 
     padding: 20px;
     margin: 0 auto;
     max-width: 1200px;
 }
 
-/* Estilo de los formularios individuales */
 .container-form {
-    width: 48%; /* Cada formulario ocupa el 48% del espacio */
+    width: 48%; 
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para los grupos de formulario */
 .form-group {
     margin-bottom: 20px;
 }
 
-/* Estilo de los campos de entrada */
 input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="range"], select {
     width: 100%;
     padding: 8px;
@@ -30,7 +26,6 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="number"]
     border: 1px solid #ccc;
 }
 
-/* Estilo de los botones */
 button {
     padding: 10px 15px;
     border: none;
