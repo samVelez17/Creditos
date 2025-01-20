@@ -1,3 +1,7 @@
+.text-center{
+    font-size:2.3em !important;
+    color: #3F2B56;
+}
 .form-container {
     display: flex; 
     justify-content: space-between; 
@@ -22,21 +26,36 @@
 input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="range"], select {
     width: 100%;
     padding: 8px;
-    border-radius: 4px;
+    border-radius: 30px;
     border: 1px solid #ccc;
 }
 
-button {
-    padding: 10px 15px;
+.btnMoral,.btnFisica,.btnCalculo{
     border: none;
-    background-color: #4CAF50;
+    background-color:#3EB1C8;
     color: white;
-    border-radius: 4px;
     cursor: pointer;
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 1.4em;
+    line-height: 1.25em;
+    letter-spacing: -0.48px;
+    border-radius: 0px  30px 30px 0px ;
+    padding: 15px 35px 15px 35px;
+    width: 30%;
 }
-
+.btnFisica{
+   
+    border-radius: 30px 0px 0px 30px  ;
+}
+.btnCalculo{
+   
+    border-radius: 30px;
+    
+   
+}
 button:hover {
-    background-color: #45a049;
+    background-color:#3F2B56;
+    color: white;
 }
 
 .TxtCalulo{
@@ -46,4 +65,10 @@ button:hover {
     display: flex;
     justify-content: space-between;
     font-size: 0.9em;
+}
+.Resultados{
+    color: #3EB1C8; 
+    padding: 5px 10px;
+    font-weight: bold;
+
 }

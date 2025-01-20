@@ -103,6 +103,6 @@ function updateTermDisplay(value) {
     document.getElementById('selectedTerm').textContent = `${value} meses`;
 }
 
-function updateTermDisplay(value) {
+function updateTermDisplay1(value) {
     document.getElementById('termDisplay').textContent = `${value} meses`;
 }
