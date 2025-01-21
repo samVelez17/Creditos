@@ -10,7 +10,7 @@
 <body>
     <main>
         <div class="container mt-4 text-center">
-            <h1 class="mb-2">Simulador de Crédito</h1>
+            <h1 class=" text-center mb-2">Simulador de Crédito</h1>
             <h6 >¿Qué tipo de Persona eres?</h6>
         </div>
         <div class="mb-4">
@@ -20,17 +20,18 @@
             </div>
         </div>
         <div>
-            
             <div class="container mt-4">
-                <h1 class="text-center mb-4">Datos del Representante del Préstamo</h1>
+                <div class="card border-light mb-4" >
+                    <h3 class="card-header text-titles mb-4">Representante del Préstamo</h3>
+                  </div>
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="representativeName" class="form-label">Nombre de la Empresa:</label>
-                        <input type="text" id="representativeName" class="form-control" placeholder="Nombre de la Empresa" required>
-                    </div>
+                        <input type="text" id="representativeName" class="form-control" placeholder="Nombre" required>
+                    </div>                 
                     <div class="col-md-4 mb-3">
                         <label for="representativeEmail" class="form-label">Correo Electrónico:</label>
-                        <input type="email" id="representativeEmail" class="form-control" placeholder="ejemplo@correo.com" required>
+                        <input type="email" id="representativeEmail" class="form-control " placeholder="ejemplo@correo.com" required>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="representativePhone" class="form-label">Teléfono:</label>
@@ -38,7 +39,7 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="representativeCompany" class="form-label">Razón Social:</label>
-                        <input type="text" id="representativeCompany" class="form-control" placeholder="Ej. Nombre de la empresa" required>
+                        <input type="text" id="representativeCompany" class="form-control" placeholder="Razon Social" required>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="representativeRfc" class="form-label">RFC con Homoclave:</label>
@@ -63,7 +64,7 @@
                                     <input type="number" id="loanAmount" class="form-control" placeholder="Ej. 50000" min="1" max="100000">
                                 </div>
                 
-                                <!-- Frecuencia de Pago -->
+                                <!-- Frecuencia de Pago -->     
                                 <div class="col-md-4 mb-3">
                                     <label for="paymentFrequency" class="form-label">Frecuencia de pago:</label>
                                     <select id="paymentFrequency" class="form-select">
@@ -72,10 +73,9 @@
                                         <option value="annually">Anual</option>
                                     </select>
                                 </div>
-                
                                 <!-- Selector de Productos Financieros -->
                                 <div class="col-md-4 mb-3">
-                                    <label for="productSelector" class="form-label">Selector de productos financieros:</label>
+                                    <label for=" productSelector" class="form-label">Selector de productos financieros:</label>
                                     <select id="productSelector" class="form-select">
                                         <option value="">Seleccione una opción</option>
                                     </select>
@@ -90,7 +90,10 @@
                                         <span id="maxAmountLabel">Monto máximo:</span>
                                     </div>
                                     <div class="text-center mt-2">
-                                        <p>Monto seleccionado: <span id="selectedAmount" class="Resultados">0</span></p>
+                                        <p>Monto seleccionado:</p>
+                                        <div>
+                                            <span id="selectedAmount" class="Resultados">0</span>
+                                        </div>
                                     </div>
                                 </div>
                 
@@ -103,7 +106,10 @@
                                         <span id="maxTermLabel">Plazo máximo:</span>
                                     </div>
                                     <div class="text-center mt-2">
-                                        <p>Plazo seleccionado: <span id="selectedTerm" class="Resultados">0</span></p>
+                                        <p>Plazo seleccionado: </p>
+                                        <div>
+                                            <span id="selectedTerm" class="Resultados">0</span>
+                                        </div>
                                     </div>
                                 </div>
                 
@@ -115,7 +121,7 @@
                 
                                 <!-- Botón de Cálculo -->
                                 <div class="col-md-12 text-center">
-                                    <button type="button" class="btn btn-primary mt-3" onclick="calculateLoan()">Calcular</button>
+                                    <button type="button" class=" btnCalculo" onclick="calculateLoan()">Calcular</button>
                                 </div>
                 
                                 <!-- Resultados -->
