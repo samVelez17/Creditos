@@ -1,7 +1,4 @@
-.text-center{
-    font-size:2em !important;
-    color: #3F2B56;
-}
+
 .text-titles{
     color: #3F2B56;
     text-align: center;
@@ -101,3 +98,5 @@ button:hover {
 #paymentFrequency {
     border-radius: 30px;
 }
+
+

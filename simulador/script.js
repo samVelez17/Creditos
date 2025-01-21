@@ -1,3 +1,27 @@
+
+            // Ajustar la lógica de redirección según la selección
+            function handleSelectionChange(selectElement) {
+                const selectedValue = selectElement.value;
+                if (selectedValue === 'moral') {
+                    window.location.href = 'index1.html'; // Redirige a Persona Moral
+                } else if (selectedValue === 'fisica') {
+                    window.location.href = 'index.html'; // Redirige a Persona Física
+                }
+            }
+        
+            // Establecer el valor actual del selector según la página activa
+            window.onload = function () {
+                const currentPage = window.location.pathname.split('/').pop(); // Obtiene el nombre del archivo actual
+                const selectElement = document.getElementById('personType');
+                
+                if (currentPage === 'index1.html') {
+                    selectElement.value = 'moral'; // Marca "Persona Moral"
+                } else if (currentPage === 'index.html') {
+                    selectElement.value = 'fisica'; // Marca "Persona Física"
+                }
+            };
+        
+
 const products = [
     {
         id: "11",
