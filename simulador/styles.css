@@ -11,6 +11,13 @@
     background-color:#3EB1C8;
     color: white;
 }
+.title1 {
+    background-color:#fff;
+    color:#3F2B56;
+}
+.line{
+    border-color: 3px solid #3F2B56 !important;
+}
 .form-container {
     display: flex; 
     justify-content: space-between; 
