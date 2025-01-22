@@ -1,37 +1,6 @@
-
-.text-titles{
-    color: #3F2B56;
-    text-align: center;
-    padding: 12px;
-}
-.card-header{
-    background-color:#3EB1C8;
-    color: white;
-}
-.title1 {
-    background-color:#fff;
-    color:#3F2B56;
-}
 .line{
-    border-color: 3px solid #3F2B56 !important;
+    border-color: 3px solid #3F2B56;
 }
-.form-container {
-    display: flex; 
-    justify-content: space-between; 
-    gap: 20px; 
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.container-form {
-    width: 49%; 
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 .form-group {
     margin-bottom: 20px;
 }
@@ -43,25 +12,7 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="number"]
     border: 1px solid #ccc;
     padding-left: 20px;
 }
-
-.btnMoral,.btnFisica{
-    border: none;
-    background-color:#3EB1C8;
-    color: white;
-    cursor: pointer;
-    font-family: 'Gilroy-Bold', sans-serif;
-    font-size: 1.4em;
-    line-height: 1.25em;
-    letter-spacing: -0.48px;
-    border-radius: 0px  30px 30px 0px ;
-    padding: 15px 35px 15px 35px;
-    width: 30%;
-}
-.btnFisica{
-   
-    border-radius: 30px 0px 0px 30px  ;
-}
-.btnCalculo{
+.btnCalculo,.btn-regresar{
     border: none;
     background-color:#3EB1C8;
     color: white;
@@ -73,30 +24,45 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="number"]
     padding: 15px 35px 15px 35px;
     width: 20%;
     border-radius: 30px;
-    
-   
 }
 button:hover {
     background-color:#3F2B56;
     color: white;
 }
-
-.TxtCalulo{
-    text-align: center;
-}
-.range-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9em;
-}
-.Resultados{
-    color: #3EB1C8; 
-    padding: 5px 10px;
-    font-weight: bold;
-
-}
-#paymentFrequency {
+.btn-regresar {
+    background-color: #3F2B56;
+    color: white;
+    cursor: pointer;
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 1.0em;
+    line-height: 1.0em;
+    letter-spacing: -0.30px;
+    padding: 15px 35px 15px 35px;
+    width: 20%;
     border-radius: 30px;
 }
-
-
+.btn-regresar:hover {
+    background-color: #3EB1C8;
+    color: white;
+}
+.bordered-card {
+    border-radius: 30px;
+    border: none;
+    background-color: #3EB1C8;
+    padding: 3.5rem 3.5rem;
+    color: white;
+}
+.resultado{
+    font-size: 3.4em;
+}
+.title-box,.resultado,.resultado-card{
+font-weight: 700;
+margin-bottom: .5rem;
+margin: 0;
+}
+.resultado-card{
+    font-size: 1.1em !important;
+}
+.range-meses{
+    margin-top: 1.5em;
+}

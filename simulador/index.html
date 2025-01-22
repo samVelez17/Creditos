@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <main>
         <div class="container mt-4 text-center elementor-widget-container">
@@ -16,7 +14,6 @@
             <hr class="w-60 mx-auto line">
             <h6>¿Qué tipo de Persona eres?</h6>
         </div>
-        
         <div class="container mt-4 elementor-widget-container">
             <div class="form-group d-flex justify-content-between align-items-center">
                 <select id="personType" class="form-control flex-grow-1" onchange="handleSelectionChange(this)">
@@ -29,76 +26,98 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="representativeName" class="form-label">Nombre(s)</label>
+                        <label for="representativeName" class="form-label title-box">Nombre(s)</label>
                         <input type="text" id="representativeName" class="form-control" placeholder="Nombre(s)" required>
                     </div>
-                    <div class="form-group">
-                        <label for="representativeLastName" class="form-label">Apellido paterno</label>
-                        <input type="text" id="representativeLastName" class="form-control" placeholder="Apellido paterno" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="representativeMotherName" class="form-label">Apellido materno</label>
-                        <input type="text" id="representativeMotherName" class="form-control" placeholder="Apellido materno" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="representativeEmail" class="form-label">Correo Electrónico:</label>
-                        <input type="email" id="representativeEmail" class="form-control" placeholder="ejemplo@correo.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="representativePhone" class="form-label">Teléfono del Representante:</label>
-                        <input type="tel" id="representativePhone" class="form-control" placeholder="Ej. +521234567890" required>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="col-md-12">
-                        <div class="card custom-card">
-                            <div class="card-header text-center">
-                                <h3>Detalles del Cálculo</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <label for="loanAmount">Monto del Crédito ($):</label>
-                                            <input type="number" id="loanAmount" class="form-control" placeholder="Ej. 50000" min="1" max="100000">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <label for="paymentFrequency">Frecuencia de pago:</label>
-                                            <select id="paymentFrequency" class="form-select">
-                                                <option value="monthly">Mensual</option>
-                                                <option value="quarterly">Trimestral</option>
-                                                <option value="annually">Anual</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group mb-3">
-                                            <label for="loanTerm">Plazo (meses):</label>
-                                            <input type="range" id="loanTerm" class="form-range" min="1" max="24" step="1" oninput="updateTermDisplay1(this.value)">
-                                            <div class="mt-2">
-                                                <p>Plazo seleccionado: </p>
-                                                <span id="termDisplay" class="Resultados">24 meses</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 text-center">
-                                        <button class="btn btn-primary btn-lg custom-btn" onclick="calculateLoan()">Calcular</button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="container form-group">
+                        <div class="row align-items-center">
+                          <div class="col">
+                            <label for="representativeLastName" class="form-label title-box">Apellido paterno</label>
+                            <input type="text" id="representativeLastName" class="form-control" placeholder="Apellido paterno" required>
+                          </div>
+                          <div class="col">
+                            <label for="representativeMotherName" class="form-label title-box">Apellido materno</label>
+                            <input type="text" id="representativeMotherName" class="form-control" placeholder="Apellido materno" required>
+                          </div>
                         </div>
                     </div>
+                    <div class="container form-group">
+                        <div class="row align-items-center">
+                          <div class="col">
+                              <label for="representativeEmail" class="form-label title-box">Correo Electrónico:</label>
+                              <input type="email" id="representativeEmail" class="form-control" placeholder="ejemplo@correo.com" required>
+                          </div>
+                          <div class="col">
+                              <label for="representativePhone" class="form-label title-box">Teléfono del Representante:</label>
+                              <input type="tel" id="representativePhone" class="form-control" placeholder="Ej. +521234567890" required>
+                          </div>
+                       </div>
+                   </div>       
+                    <div class="container form-group">
+                        <div class="row align-items-center">
+                          <div class="col">
+                            <label for="loanAmount" class="form-label title-box">Monto del Crédito ($):</label>
+                            <input type="number" id="loanAmount" class="form-control" placeholder="Ej. 50000" min="1" max="100000">
+                          </div>
+                          <div class="col">
+                            <label for="paymentFrequency" class="form-label title-box">Frecuencia de pago:</label>
+                            <select id="paymentFrequency" class="form-select">
+                                <option value="monthly">Mensual</option>
+                                <option value="quarterly">Trimestral</option>
+                                <option value="annually">Anual</option>
+                            </select>
+                          </div>
+                        </div>
+                    </div>   
+                      <div class="d-grid gap-2 d-md-block">
+                        <button class=" btnCalculo" onclick="calculateLoan()">Solicitar</button>
+                        <button class=" btn-regresar" onclick="calculateLoan()">Regresar</button>
+                      </div>
+
                 </div>
-              </div>
-          </div>
+                <div class="col">
+                    <div class="col-md-12 ">
+                        <div class="card-body custom-card bordered-card ">
+                            <div class="text-center title-box">
+                                <h3>Detalles de la Solicitud </h3>
+                            </div>
+                              <div class="container text-center">
+                                    <small class="d-flex justify-content-center title-box">Monto</small>
+                                    <span class="resultado">$10,0000,0000</span>
+                              </div>
+                              <div class="row">
+                                    <div class="col-6">
+                                        <small class="d-flex justify-content-center title-box">Plazo</small>
+                                        <span id="termDisplay" class="d-flex justify-content-center fs-1 resultado-card">24 meses</span>
+                                      </div>
+                                      <div class="col-6">
+                                            <small class="d-flex justify-content-center title-box">Pago menzual aproximado</small>
+                                            <span class="d-flex justify-content-center fs-1 resultado-card ">$846,875 </span>
+                                      </div>     
+                             </div>
+                         </div>
+                    </div>
+                    <div class="container range-meses">
+                        <div class="row">
+                         <div class="col-md-12">
+                            <div class="form-group mb-3">
+                              <label for="loanTerm">Plazo (meses):</label>
+                              <input type="range" id="loanTerm" class="form-range" min="1" max="24" step="1" oninput="updateTermDisplay1(this.value)">
+                           </div>
+                          </div>
+                       </div>
+                  </div>
+                    <div class="col-md-12 text-center">
+                       <button class=" btnCalculo" onclick="calculateLoan()">Calcular</button>
+                     </div>
+                </div>
+            </div>
+      </div>
+
         <script src="script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
-   </div>
     </main>
 </body>
-
 </html>
