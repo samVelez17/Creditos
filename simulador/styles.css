@@ -22,7 +22,6 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="number"]
     line-height: 1.0em;
     letter-spacing: -0.30px;
     padding: 15px 35px 15px 35px;
-    width: 20%;
     border-radius: 30px;
 }
 button:hover {
@@ -38,7 +37,6 @@ button:hover {
     line-height: 1.0em;
     letter-spacing: -0.30px;
     padding: 15px 35px 15px 35px;
-    width: 20%;
     border-radius: 30px;
 }
 .btn-regresar:hover {
@@ -49,7 +47,7 @@ button:hover {
     border-radius: 30px;
     border: none;
     background-color: #3EB1C8;
-    padding: 3.5rem 3.5rem;
+    padding: 2.5rem 2.5rem;
     color: white;
 }
 .resultado{
@@ -65,4 +63,11 @@ margin: 0;
 }
 .range-meses{
     margin-top: 1.5em;
+}
+.mb-5 {
+    margin-bottom: 2rem !important;
+}
+.btns {
+    justify-content: space-around;
+    margin-bottom: 1rem !important;
 }

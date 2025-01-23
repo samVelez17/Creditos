@@ -126,7 +126,3 @@ function updateAmountDisplay(value) {
 function updateTermDisplay(value) {
     document.getElementById('selectedTerm').textContent = `${value} meses`;
 }
-
-function updateTermDisplay1(value) {
-    document.getElementById('termDisplay').textContent = `${value} meses`;
-}
