@@ -3,7 +3,7 @@
             function handleSelectionChange(selectElement) {
                 const selectedValue = selectElement.value;
                 if (selectedValue === 'moral') {
-                    window.location.href = 'index1.html'; // Redirige a Persona Moral
+                    window.location.href = 'PMoral.html'; // Redirige a Persona Moral
                 } else if (selectedValue === 'fisica') {
                     window.location.href = 'index.html'; // Redirige a Persona Física
                 }
