@@ -58,31 +58,31 @@
                 </div>
 
                 <div class="col">
-                    <div class="col-md-12 mb-5">
-                        <div class="card-body custom-card bordered-card ">
-                            <div class="text-center title-box">
-                                <h3>Detalles de la Solicitud </h3>
+                  <div class="col-md-12 mb-5">
+                    <div class="card-body custom-card bordered-card">
+                        <div class="text-center title-box">
+                            <h3>Detalles de la Solicitud</h3>
+                        </div>
+                        <div class="container text-center">
+                            <small class="d-flex justify-content-center title-box">Monto</small>
+                            <span id="Monto" class="resultado"></span> <!-- Monto seleccionado -->
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <small class="d-flex justify-content-center title-box">Plazo (meses);</small>
+                                <span id="selectedTerm" class="d-flex justify-content-center fs-1 resultado-card">0</span> <!-- Plazo seleccionado -->
                             </div>
-                              <div class="container text-center">
-                                    <small class="d-flex justify-content-center title-box">Monto</small>
-                                    <span class="resultado">$10,0000,0000</span>
-                              </div>
-                              <div class="row">
-                                <div class="col-6">
-                                    <small class="d-flex justify-content-center title-box">Plazo (meses);</small>
-                                    <span id="selectedTerm"  class="d-flex justify-content-center fs-1 resultado-card">0</span>
-                                  </div>
-                                  <div class="col-6">
-                                    <small class="d-flex justify-content-center title-box">Monto (pago);</small>
-                                    <span id="selectedAmount" class="d-flex justify-content-center fs-1 resultado-card">0</span>
-                                </div>  
-                                  <div class=" text-center">
-                                        <small class="d-flex justify-content-center title-box">Pago menzual aproximado</small>
-                                        <span class="d-flex justify-content-center fs-1 resultado-card ">$846,875 </span>
-                                  </div>     
-                         </div>
-                         </div>
+                            <div class="col-6">
+                                <small class="d-flex justify-content-center title-box">Monto (pago);</small>
+                                <span id="selectedLoanAmount" class="d-flex justify-content-center fs-1 resultado-card">0</span> <!-- Monto del préstamo -->
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <small class="d-flex justify-content-center title-box">Pago mensual aproximado</small>
+                            <span id="monthlyPayment" class="d-flex justify-content-center fs-1 resultado-card">$0</span> <!-- Pago mensual -->
+                        </div>
                     </div>
+                </div>
                     <div class="d-flex gap-2 btns">
                         <a href="index.html" class="btn btn-regresar">Regresar</a>
                       <button class="btn btnCalculo" onclick="calculateLoan()">Continuar</button>

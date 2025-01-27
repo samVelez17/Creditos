@@ -10,6 +10,7 @@ function guardarDatos(event) {
     const representativeMotherName = document.getElementById('representativeMotherName').value;
     const representativeEmail = document.getElementById('representativeEmail').value;
     const representativePhone = document.getElementById('representativePhone').value;
+    const representativeMonto = document.getElementById ('representativeMonto').value;
 
     // Guardar los datos en localStorage
     localStorage.setItem('representativeName', representativeName);
@@ -17,6 +18,7 @@ function guardarDatos(event) {
     localStorage.setItem('representativeMotherName', representativeMotherName);
     localStorage.setItem('representativeEmail', representativeEmail);
     localStorage.setItem('representativePhone', representativePhone);
+    localStorage.setItem('representativeMonto', representativeMonto);
 
     // Ahora redirigir a la siguiente página (RFisica.html)
     window.location.href = "RFisica.html";
@@ -30,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const representativeMotherName = localStorage.getItem('representativeMotherName');
     const representativeEmail = localStorage.getItem('representativeEmail');
     const representativePhone = localStorage.getItem('representativePhone');
+    const representativeMonto = localStorage.getItem('representativeMonto');
 
     // Asignar los valores a los elementos span correspondientes
     document.getElementById('Name').textContent = representativeName || "No disponible";
@@ -37,4 +40,5 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('NameMaterno').textContent = representativeMotherName || "No disponible";
     document.getElementById('Correo').textContent = representativeEmail || "No disponible";
     document.getElementById('Phone').textContent = representativePhone || "No disponible";
+    document.getElementById('Monto').textContent = representativeMonto || "No disponible";
 });
