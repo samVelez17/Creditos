@@ -45,12 +45,12 @@
                     <div class="container form-group">
                         <div class="row align-items-center">
                           <div class="col">
-                              <label for="representativeEmail" class="form-label title-box">Correo Electrónico:</label>
-                              <input type="email" id="representativeEmail" class="form-control" placeholder="ejemplo@correo.com" required>
+                            <label for="representativeEmail" class="form-label title-box">Correo Electrónico:</label>
+                            <input type="email" id="representativeEmail" class="form-control" placeholder="ejemplo@correo.com" required>
                           </div>
                           <div class="col">
-                              <label for="representativePhone" class="form-label title-box">Teléfono del Representante:</label>
-                              <input type="tel" id="representativePhone" class="form-control" placeholder="Ej. +521234567890" required>
+                            <label for="representativePhone" class="form-label title-box">Teléfono del Representante:</label>
+                            <input type="tel" id="representativePhone" class="form-control" placeholder="Ej. +521234567890" required>
                           </div>
                        </div>
                    </div>       
@@ -90,7 +90,7 @@
                         </div>
                           <div class="d-flex gap-2 btns">
                             <button class="btn btn-regresar" onclick="calculateLoan()">Regresar</button>
-                            <a href="RFisica.html" class="btn btnCalculo">Continuar</a>
+                            <a href="RFisica.html" class="btn btnCalculo" onclick="guardarDatos(event)">Continuar</a> <!-- Llamar guardarDatos -->
                         </div>
                         </div>
                     </div>   

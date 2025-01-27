@@ -1,5 +1,4 @@
 
-            // Ajustar la lógica de redirección según la selección
             function handleSelectionChange(selectElement) {
                 const selectedValue = selectElement.value;
                 if (selectedValue === 'moral') {
@@ -20,8 +19,6 @@
                     selectElement.value = 'fisica'; // Marca "Persona Física"
                 }
             };
-        
-
 const products = [
     {
         id: "11",
@@ -126,22 +123,3 @@ function updateAmountDisplay(value) {
 function updateTermDisplay(value) {
     document.getElementById('selectedTerm').textContent = `${value} meses`;
 }
-
-// Evento para capturar los datos del formulario
-document.getElementById('userForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita que la página se recargue
-  
-    // Obtén los valores de los campos
-    const name = document.getElementById('NomEmpresa').value;
-    const email = document.getElementById('email').value;
-    const age = document.getElementById('age').value;
-  
-    // Guarda los datos en localStorage
-    localStorage.setItem('NomEmpresa', NomEmpresa);
-    localStorage.setItem('email', email);
-    localStorage.setItem('age', age);
-  
-    // Redirige a la página de datos
-    window.location.href = 'datos.html';
-  });
-
