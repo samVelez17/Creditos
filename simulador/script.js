@@ -123,3 +123,18 @@ function updateAmountDisplay(value) {
 function updateTermDisplay(value) {
     document.getElementById('selectedTerm').textContent = `${value} meses`;
 }
+
+let currencyFormat = new Intl.NumberFormat("es-MX", {
+    style: "currency",
+    currency: "MXN",
+    maximumFractionDigits: 0
+})
+
+const inputMonto = document.getElementById('representativeMonto');
+    inputMonto.addEventListener('input', function() {
+        inputMonto.value = inputMonto.value.replace(/[^0-9]/g, '');
+    });
+    function updateMonto(monto) {
+        monto = document.getElementById('representativeMonto').value;
+        document.getElementById('monto').textContent = currencyFormat.format(monto);
+  }

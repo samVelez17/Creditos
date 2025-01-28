@@ -12,82 +12,74 @@
         <div class="container mt-4 text-center elementor-widget-container mb-5">
             <h1 class="text-center mb-2">Simula tu crédito</h1>
             <hr class="w-60 mx-auto line">
-            <h6>Datos Ingresados Persona Moral</h6>
+            <h6>Ingresa los Datso de la Persona Moral</h6>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col">
-                  <div class="container form-group">
-                    <label for="representativeName" class="form-label title-box">Nombre de la Empresa:</label>
-                    <div class=" form-group">
-                      <span id="resultName">LERCO</span>
-                    </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="container form-group">
+                <label for="representativeName" class="form-label title-box">Nombre de la Empresa:</label>
+                <input type="text" id="NomEmpresa" name="NomEmpresa" class="form-control" placeholder="Nombre" required>
+              </div>
+              <div class="container form-group">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <label for="representativeEmail" class="form-label title-box">Correo Electrónico:</label>
+                    <input type="email" id="representativeEmail" class="form-control" placeholder="ejemplo@correo.com" required>
                   </div>
-                  <div class="container form-group">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <label for="representativeEmail" class="form-label title-box ">Correo Electrónico:</label>
-                        <div class=" form-group">
-                          <span id="displayEmail">SAMveled478569@gmail.com</span>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <label for="representativePhone" class="form-label title-box">Teléfono:</label>
-                        <div class=" form-group">
-                          <span id="displayPhone">2211197085</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="container form-group">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <label for="representativeCompany" class="form-label title-box">Razón Social:</label>
-                        <div class=" form-group">
-                          <span id="displayCompany">Lima & Álvarez</span>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <label for="representativeRfc" class="form-label title-box">RFC con Homoclave:</label>
-                        <div class=" form-group">
-                          <span id="displayRfc">AAAA123456BBB</span>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="col">
+                    <label for="representativePhone" class="form-label title-box">Teléfono:</label>
+                    <input type="tel" id="representativePhone" class="form-control" placeholder="Ej. +521234567890" required>
                   </div>
                 </div>
-                <div class="col">
-                    <div class="col-md-12 mb-5">
-                        <div class="card-body custom-card bordered-card ">
-                            <div class="text-center title-box">
-                                <h3>Detalles de la Solicitud </h3>
-                            </div>
-                              <div class="container text-center">
-                                    <small class="d-flex justify-content-center title-box">Monto</small>
-                                    <span class="resultado">$10,0000,0000</span>
-                              </div>
-                              <div class="row">
-                                <div class="col-6">
-                                    <small class="d-flex justify-content-center title-box">Plazo (meses);</small>
-                                    <span id="selectedTerm"  class="d-flex justify-content-center fs-1 resultado-card">0</span>
-                                  </div>
-                                  <div class="col-6">
-                                    <small class="d-flex justify-content-center title-box">Monto (pago);</small>
-                                    <span id="selectedAmount" class="d-flex justify-content-center fs-1 resultado-card">0</span>
-                                </div>  
-                                  <div class=" text-center">
-                                        <small class="d-flex justify-content-center title-box">Pago menzual aproximado</small>
-                                        <span class="d-flex justify-content-center fs-1 resultado-card ">$846,875 </span>
-                                  </div>     
-                         </div>
-                         </div>
-                    </div>
-                    <div class="d-flex gap-2 btns">
-                        <a href="index.html" class="btn btn-regresar">Regresar</a>
-                      <button class="btn btnCalculo" onclick="calculateLoan()">Continuar</button>
+              </div>
+              <div class="container form-group">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <label for="representativeCompany" class="form-label title-box">Razón Social:</label>
+                    <input type="text" id="representativeCompany" class="form-control" placeholder="Razón Social" required>
+                  </div>
+                  <div class="col">
+                    <label for="representativeRfc" class="form-label title-box">RFC con Homoclave:</label>
+                    <input type="text" id="representativeRfc" class="form-control" placeholder="Ej. ABCD123456XYZ" required 
+                           pattern="[A-Z&\u00d1]{4}\d{6}[A-Z0-9]{3}">
                   </div>
                 </div>
+              </div>
+              <div class="d-flex gap-2 btns">
+                <a href="index.html" class="btn btn-regresar">Regresar</a>
+                <button class="btn btnCalculo" onclick="calculateLoan()">Continuar</button>
+              </div>
             </div>
+            <div class="col-md-6">
+              <div class="col-md-12 mb-5">
+                <div class="card-body custom-card bordered-card">
+                  <div class="text-center title-box">
+                    <h3>Detalles de la Solicitud</h3>
+                  </div>
+                  <div class="container text-center">
+                    <small class="d-flex justify-content-center title-box">Monto</small>
+                    <span class="resultado" id="monto">$0</span> 
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <small class="d-flex justify-content-center title-box">Plazo (meses);</small>
+                      <span id="selectedTerm" class="d-flex justify-content-center fs-1 resultado-card">0</span>
+                    </div>
+                    <div class="col-6">
+                      <small class="d-flex justify-content-center title-box">Monto (pago);</small>
+                      <span id="selectedAmount" class="d-flex justify-content-center fs-1 resultado-card">$0</span>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <small class="d-flex justify-content-center title-box">Pago mensual aproximado</small>
+                    <span class="d-flex justify-content-center fs-1 resultado-card ">$846,875</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
         <script src="script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

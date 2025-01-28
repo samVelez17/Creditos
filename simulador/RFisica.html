@@ -12,30 +12,24 @@
         <div class="container mt-4 text-center elementor-widget-container mb-5">
             <h1 class="text-center mb-2">Simula tu crédito</h1>
             <hr class="w-60 mx-auto line">
-            <h6>Datos Ingresados Persona Fisica</h6>
+            <h6>Ingresa los Datos de la Persona Fisica</h6>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-md-6">
                     <div class="container form-group">
                         <label for="representativeName" class="form-label title-box">Nombre(s)</label>
-                        <div class="form-group">
-                          <span id="Name"></span> 
-                      </div>
+                        <input type="text" id="representativeName" class="form-control" placeholder="Nombre(s)" required>
                     </div>
                     <div class="container form-group">
                         <div class="row align-items-center">
                           <div class="col">
                             <label for="representativeLastName" class="form-label title-box">Apellido paterno</label>
-                            <div class="form-group">
-                              <span id="NamePaterno"></span> 
-                          </div>
+                            <input type="text" id="representativeLastName" class="form-control" placeholder="Apellido paterno" required>
                           </div>
                           <div class="col">
                             <label for="representativeMotherName" class="form-label title-box">Apellido materno</label>
-                            <div class="form-group">
-                              <span id="NameMaterno"></span> 
-                          </div>
+                            <input type="text" id="representativeMotherName" class="form-control" placeholder="Apellido materno" required>
                           </div>
                         </div>
                     </div>
@@ -43,54 +37,47 @@
                         <div class="row align-items-center">
                           <div class="col">
                             <label for="representativeEmail" class="form-label title-box">Correo Electrónico:</label>
-                            <div class="form-group">
-                              <span id="Correo"></span> 
-                          </div>
+                            <input type="email" id="representativeEmail" class="form-control" placeholder="ejemplo@correo.com" required>
                           </div>
                           <div class="col">
                             <label for="representativePhone" class="form-label title-box">Teléfono del Representante:</label>
-                            <div class="form-group">
-                              <span id="Phone"></span> 
+                            <input type="tel" id="representativePhone" class="form-control" placeholder="Ej. +521234567890" required>
                           </div>
-                          </div>
-                       </div>
-                   </div>       
+                       </div>   
                 </div>
-
-                <div class="col">
-                  <div class="col-md-12 mb-5">
-                    <div class="card-body custom-card bordered-card">
-                        <div class="text-center title-box">
-                            <h3>Detalles de la Solicitud</h3>
-                        </div>
-                        <div class="container text-center">
-                            <small class="d-flex justify-content-center title-box">Monto</small>
-                            <span id="Monto" class="resultado"></span> <!-- Monto seleccionado -->
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <small class="d-flex justify-content-center title-box">Plazo (meses);</small>
-                                <span id="selectedTerm" class="d-flex justify-content-center fs-1 resultado-card">0</span> <!-- Plazo seleccionado -->
-                            </div>
-                            <div class="col-6">
-                                <small class="d-flex justify-content-center title-box">Monto (pago);</small>
-                                <span id="selectedLoanAmount" class="d-flex justify-content-center fs-1 resultado-card">0</span> <!-- Monto del préstamo -->
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <small class="d-flex justify-content-center title-box">Pago mensual aproximado</small>
-                            <span id="monthlyPayment" class="d-flex justify-content-center fs-1 resultado-card">$0</span> <!-- Pago mensual -->
-                        </div>
+                <div class="d-flex gap-2 btns">
+                    <a href="index.html" class="btn btn-regresar">Regresar</a>
+                  <button class="btn btnCalculo" onclick="calculateLoan()">Continuar</button>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-12 mb-5">
+                  <div class="card-body custom-card bordered-card">
+                    <div class="text-center title-box">
+                      <h3>Detalles de la Solicitud</h3>
                     </div>
-                </div>
-                    <div class="d-flex gap-2 btns">
-                        <a href="index.html" class="btn btn-regresar">Regresar</a>
-                      <button class="btn btnCalculo" onclick="calculateLoan()">Continuar</button>
+                    <div class="container text-center">
+                      <small class="d-flex justify-content-center title-box">Monto</small>
+                      <span class="resultado" id="monto">$0</span> 
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <small class="d-flex justify-content-center title-box">Plazo (meses);</small>
+                        <span id="selectedTerm" class="d-flex justify-content-center fs-1 resultado-card">0</span>
+                      </div>
+                      <div class="col-6">
+                        <small class="d-flex justify-content-center title-box">Monto (pago);</small>
+                        <span id="selectedAmount" class="d-flex justify-content-center fs-1 resultado-card">$0</span>
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <small class="d-flex justify-content-center title-box">Pago mensual aproximado</small>
+                      <span class="d-flex justify-content-center fs-1 resultado-card ">$846,875 </span>
+                    </div>
                   </div>
                 </div>
-               
-            </div>
-      </div>
+              </div>
+      </div> 
         <script src="script.js"></script>
         <script src="resultados.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
