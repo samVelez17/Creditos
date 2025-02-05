@@ -1,24 +1,25 @@
 
-            function handleSelectionChange(selectElement) {
-                const selectedValue = selectElement.value;
-                if (selectedValue === 'moral') {
-                    window.location.href = 'PMoral.html'; // Redirige a Persona Moral
-                } else if (selectedValue === 'fisica') {
-                    window.location.href = 'index.html'; // Redirige a Persona Física
-                }
-            }
-        
-            // Establecer el valor actual del selector según la página activa
-            window.onload = function () {
-                const currentPage = window.location.pathname.split('/').pop(); // Obtiene el nombre del archivo actual
-                const selectElement = document.getElementById('personType');
-                
-                if (currentPage === 'index1.html') {
-                    selectElement.value = 'moral'; // Marca "Persona Moral"
-                } else if (currentPage === 'index.html') {
-                    selectElement.value = 'fisica'; // Marca "Persona Física"
-                }
-            };
+function handleSelectionChange(selectElement) {
+    const selectedValue = selectElement.value;
+    if (selectedValue === 'pmoral') {
+        window.location.href = 'PMoral.html'; // Redirige a Persona Moral
+    } else if (selectedValue === 'pfisica') {
+        window.location.href = 'index.html'; // Redirige a Persona Física
+    }
+}
+
+// Establecer el valor actual del selector según la página activa
+window.onload = function () {
+    const currentPage = window.location.pathname.split('/').pop(); // Obtiene el nombre del archivo actual
+    const selectElement = document.getElementById('personType');
+
+    if (currentPage === 'PMoral.html') {
+        selectElement.value = 'moral'; // Marca "Persona Moral"
+    } else if (currentPage === 'index.html') {
+        selectElement.value = 'fisica'; // Marca "Persona Física"
+    }
+};
+
 const products = [
     {
         id: "11",
@@ -88,10 +89,10 @@ productSelector.addEventListener('change', event => {
             style: 'currency',
             currency: 'MXN',
         });
-        
+
         document.getElementById('minAmountLabel').textContent = `Monto mínimo: ${formatter.format(selectedProduct.monto_min)}`;
         document.getElementById('maxAmountLabel').textContent = `Monto máximo: ${formatter.format(selectedProduct.monto_max)}`;
-        
+
         document.getElementById('minTermLabel').textContent = `Plazo mínimo: ${selectedProduct.plazo_min} meses`;
         document.getElementById('maxTermLabel').textContent = `Plazo máximo: ${selectedProduct.plazo_max} meses`;
 
@@ -110,11 +111,11 @@ loanTermRange.addEventListener('input', event => {
 
 function updateAmountDisplay(value) {
     const formatter = new Intl.NumberFormat
-    ('es-MX', 
-    {
-        style: 'currency',
-        currency: 'MXN',
-    });
+        ('es-MX',
+            {
+                style: 'currency',
+                currency: 'MXN',
+            });
 
     document.getElementById('selectedAmount').textContent = formatter.format(value);
 }
@@ -131,10 +132,10 @@ let currencyFormat = new Intl.NumberFormat("es-MX", {
 })
 
 const inputMonto = document.getElementById('representativeMonto');
-    inputMonto.addEventListener('input', function() {
-        inputMonto.value = inputMonto.value.replace(/[^0-9]/g, '');
-    });
-    function updateMonto(monto) {
-        monto = document.getElementById('representativeMonto').value;
-        document.getElementById('monto').textContent = currencyFormat.format(monto);
-  }
+inputMonto.addEventListener('input', function () {
+    inputMonto.value = inputMonto.value.replace(/[^0-9]/g, '');
+});
+function updateMonto(monto) {
+    monto = document.getElementById('representativeMonto').value;
+    document.getElementById('monto').textContent = currencyFormat.format(monto);
+}
