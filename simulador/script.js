@@ -1,23 +1,23 @@
 
 function handleSelectionChange(selectElement) {
     const selectedValue = selectElement.value;
-    if (selectedValue === 'pmoral') {
-        window.location.href = 'PMoral.html'; // Redirige a Persona Moral
-    } else if (selectedValue === 'pfisica') {
-        window.location.href = 'index.html'; // Redirige a Persona Física
+
+    if (selectedValue === 'fisica') {
+        window.location.href = 'index.html '; 
+    } else if (selectedValue === 'moral') {
+        window.location.href = 'PMoral.html'; 
     }
 }
 
-// Establecer el valor actual del selector según la página activa
 window.onload = function () {
-    const currentPage = window.location.pathname.split('/').pop(); // Obtiene el nombre del archivo actual
+    const currentPage = window.location.pathname.split('/').pop().toLowerCase(); 
     const selectElement = document.getElementById('personType');
 
-    if (currentPage === 'PMoral.html') {
-        selectElement.value = 'moral'; // Marca "Persona Moral"
+    if (currentPage === 'pmoral.html') {
+        selectElement.value = 'moral'; 
     } else if (currentPage === 'index.html') {
-        selectElement.value = 'fisica'; // Marca "Persona Física"
-    }
+        selectElement.value = 'fisica'; 
+    } 
 };
 
 const products = [
