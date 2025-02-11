@@ -16,7 +16,7 @@ function guardarDatos() {
     localStorage.setItem("product", product);
     localStorage.setItem("representativeMonto", representativeMonto.toString());
     localStorage.setItem("loanTerm", Math.round(loanTerm)); 
-localStorage.setItem("loanRange", Math.round(loanRange)); 
+    localStorage.setItem("loanRange", Math.round(loanRange)); 
     
     actualizarCard();
 }
@@ -99,6 +99,15 @@ function handleContinue() {
     }
 }
 
+function handContinue() {
+    if (validarFormulario()) {
+        guardarDatos();
+        window.location.href = 'RMoral.html';
+    } else {
+        alert("Por favor, completa todos los campos antes de continuar.");
+    }
+}
+
 function handleRegresar() {
     
     localStorage.setItem("representativeMonto", "0");
@@ -107,5 +116,3 @@ function handleRegresar() {
     localStorage.setItem("product", "Producto no seleccionado");
     window.location.href = 'index.html'; 
 }
-
-  
