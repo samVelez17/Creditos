@@ -16,16 +16,14 @@
             <h6>¿Qué tipo de Persona eres?</h6>
         </div>
         <div class="container mt-4 elementor-widget-container">
-            <div class="form-group d-flex justify-content-between align-items-center">
+          <div class="form-group d-flex justify-content-between align-items-center">
               <select id="personType" onchange="handleSelectionChange(this)">
-               
-                <option value="fisica">Persona Física</option>
-                <option value="moral">Persona Moral</option>
-            </select>
-            
-            
-            </div>
-        </div>
+                  <option value="fisica">Persona Física con Actividad Empresarial</option>
+                  <option value="moral">Persona Moral</option>
+              </select>
+          </div>
+      </div>
+      
         <div class="container">
           <div class="row">
             <div class="col-md-6">
@@ -37,14 +35,12 @@
                       <option value="">Seleccione una opción</option>
                     </select>
                   </div>       
-                  <div class="col mb-5">
-                    <label for="representativeMonto" class="container form-label title-box">Monto del Crédito ($):</label>
-                    <input type="text" id="representativeMonto" class="form-control" placeholder="Ej. 50000" min="1" max="100000" oninput="updateMonto()">
-                  </div>
+                  
                   <div class="container text-center mb-5">
                     <div class="row align-items-start">
                       <div class="col">
                         <label for="loanTerm" class="form-label title-box">Plazo (meses):</label>
+                       
                         <input type="range" id="loanTerm" class="form-range" step="1" oninput="updateTermDisplay(this.value)">
                         <div class="d-flex justify-content-between">
                           <span id="minTermLabel">Plazo mínimo:</span>
@@ -54,7 +50,9 @@
                     </div>
                     <div class="row align-items-start mt-3">
                       <div class="col">
-                        <label for="loanRange" class="form-label title-box">Monto:</label>
+                        <label for="loanRange" class="form-label title-box">Monto (Pago):</label>
+                        <span id="selectedAmountLabel">$0</span>
+                        
                         <input type="range" id="loanRange" class="form-range" step="1" oninput="updateAmountDisplay(this.value)">
                         <div class="d-flex justify-content-between">
                           <span id="minAmountLabel">Monto mínimo:</span>
@@ -79,28 +77,27 @@
                     <h3>Detalles de la Solicitud</h3>
                   </div>
                   <div class="container text-center">
-                    <small class="d-flex justify-content-center title-box">Monto</small>
-                    <span class="resultado" id="monto">$0</span> 
+                    <small class="d-flex justify-content-center title-box">Monto (Pago):</small>
+                    <span id="selectedAmount" class=" resultado d-flex justify-content-center fs-1 ">$0</span>
                   </div>
                   <div class="row">
                     <div class="col-6">
-                      <small class="d-flex justify-content-center title-box">Plazo (meses);</small>
+                      <small class="d-flex justify-content-center title-box">Plazo (meses):</small>
                       <span id="selectedTerm" class="d-flex justify-content-center fs-1 resultado-card">0</span>
                     </div>
                     <div class="col-6">
-                      <small class="d-flex justify-content-center title-box">Monto (pago);</small>
-                      <span id="selectedAmount" class="d-flex justify-content-center fs-1 resultado-card">$0</span>
+                      <small class="d-flex justify-content-center title-box">Pago mensual aproximado</small>
+                    <span class="d-flex justify-content-center fs-1 resultado-card ">$846,875 </span>
+                     
                     </div>
                   </div>
-                  <div class="text-center">
-                    <small class="d-flex justify-content-center title-box">Pago mensual aproximado</small>
-                    <span class="d-flex justify-content-center fs-1 resultado-card ">$846,875 </span>
-                  </div>
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
         
         <script src="script.js"></script>
         <script src="resultados.js"></script>

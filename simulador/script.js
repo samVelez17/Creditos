@@ -1,11 +1,12 @@
-
 function handleSelectionChange(selectElement) {
     const selectedValue = selectElement.value;
 
     if (selectedValue === 'fisica') {
-        window.location.href = 'index.html '; 
+        // Redirigir a la página para Persona Física con Actividad Empresarial
+        window.location.href = 'index.html';
     } else if (selectedValue === 'moral') {
-        window.location.href = 'PMoral.html'; 
+        // Redirigir a la página para Persona Moral
+        window.location.href = 'PMoral.html';
     }
 }
 
@@ -19,6 +20,7 @@ window.onload = function () {
         selectElement.value = 'fisica'; 
     } 
 };
+
 
 const products = [
     {

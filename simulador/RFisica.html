@@ -34,11 +34,17 @@
                       </div>
                   </div>
                   <div class="container form-group">
+                    <label for="representativeEmail" class="form-label title-box">Correo Electrónico:</label>
+                    <input type="email" id="representativeEmail" class="form-control" placeholder="ejemplo@correo.com" required>
+                  </div>
+                  <div class="container form-group">
                       <div class="row align-items-center">
+                        
                         <div class="col">
-                          <label for="representativeEmail" class="form-label title-box">Correo Electrónico:</label>
-                          <input type="email" id="representativeEmail" class="form-control" placeholder="ejemplo@correo.com" required>
-                        </div>
+                            <label for="representativeRfc" class="form-label title-box">RFC con Homoclave:</label>
+                            <input type="text" id="representativeRfc" class="form-control" placeholder="Ej. ABCD123456XYZ" required 
+                                   pattern="[A-Z&\u00d1]{4}\d{6}[A-Z0-9]{3}">
+                          </div>
                         <div class="col">
                           <label for="representativePhone" class="form-label title-box">Teléfono del Representante:</label>
                           <input type="tel" id="representativePhone" class="form-control" placeholder="Ej. +521234567890" required>
@@ -58,8 +64,8 @@
                         <h3>Detalles de la Solicitud</h3>
                     </div>
                     <div class="container text-center">
-                        <small class="d-flex justify-content-center title-box">Monto</small>
-                        <span class="resultado" id="monto">$0</span>
+                        <small class="d-flex justify-content-center title-box">Monto (pago):</small>
+                        <span id="selectedAmount" class=" resultado d-flex justify-content-center fs-1 ">$0</span>
                     </div>
                     <div class="row">
                         <div class="col-6">
@@ -67,14 +73,11 @@
                             <span id="selectedTerm" class="d-flex justify-content-center fs-1 resultado-card">0</span>
                         </div>
                         <div class="col-6">
-                            <small class="d-flex justify-content-center title-box">Monto (pago);</small>
-                            <span id="selectedAmount" class="d-flex justify-content-center fs-1 resultado-card">$0</span>
+                            <small class="d-flex justify-content-center title-box">Pago mensual aproximado</small>
+                            <span class="d-flex justify-content-center fs-1 resultado-card">$846,875</span>
                         </div>
                     </div>
-                    <div class="text-center">
-                        <small class="d-flex justify-content-center title-box">Pago mensual aproximado</small>
-                        <span class="d-flex justify-content-center fs-1 resultado-card">$846,875</span>
-                    </div>
+                
                 </div>
             </div>
         </div>
