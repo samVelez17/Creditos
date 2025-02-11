@@ -15,15 +15,15 @@ function guardarDatos() {
     // Guardar los valores en localStorage
     localStorage.setItem("product", product);
     localStorage.setItem("representativeMonto", representativeMonto.toString());
-    localStorage.setItem("loanTerm", Math.round(loanTerm)); // Se guarda como cadena pero sigue siendo un entero lógico
-localStorage.setItem("loanRange", Math.round(loanRange)); // Lo mismo aquí
-    // Actualizar la tarjeta
+    localStorage.setItem("loanTerm", Math.round(loanTerm)); 
+localStorage.setItem("loanRange", Math.round(loanRange)); 
+    
     actualizarCard();
 }
 
-// Ejecutar cuando se cargue la página
+
 window.onload = () => {
-    console.log(localStorage.getItem("representativeMonto")); // Debería mostrar "0" si no se ha guardado otro valor
+    console.log(localStorage.getItem("representativeMonto")); 
     
     // Configurar valores predeterminados si no existen en localStorage
     if (!localStorage.getItem("representativeMonto")) localStorage.setItem("representativeMonto", "0");
@@ -32,7 +32,7 @@ window.onload = () => {
     localStorage.setItem("product", "Producto no seleccionado");
 
     
-    // Actualizar la tarjeta con valores iniciales
+    
     actualizarCard();
 };
 
@@ -86,7 +86,7 @@ function agregarEventosDeValidacion() {
         campo.addEventListener("input", actualizarEstadoBoton);
     });
 
-    // Validar al cargar la página
+    
     actualizarEstadoBoton();
 }
 
@@ -105,7 +105,7 @@ function handleRegresar() {
     localStorage.setItem("loanTerm", "0");
     localStorage.setItem("loanRange", "0");
     localStorage.setItem("product", "Producto no seleccionado");
-    window.location.href = 'index.html'; // Redirigir al formulario
+    window.location.href = 'index.html'; 
 }
 
   
