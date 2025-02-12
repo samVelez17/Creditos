@@ -9,87 +9,78 @@
 </head>
 <body>
     <main>
-        <div class="container mt-4 text-center">
-            <h1 class=" text-center mb-2">Simula tu crédito</h1>
+        <div class="container mt-4 text-center pb-3">
+            <h1 class="text-center mb-2">Simula tu crédito</h1>
             <hr class="w-60 mx-auto line">
-            <h6 >¿Qué tipo de Persona eres?</h6>
+            <h6>¿Qué tipo de Persona eres?</h6>
         </div>
-        <div class="container mt-4 elementor-widget-container">
-            <div class="form-group d-flex justify-content-between align-items-center">
-                <select id="personType" class="form-control flex-grow-1" onchange="handleSelectionChange(this)">
-                    <option value="moral">Persona Moral</option>
-                    <option value="fisica">Persona Física con Activiad Empresarial</option>
-                </select>
-            </div>
-        </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">   
-                        <div class="container form-group">
-                            <div class="row align-items-center">
-                                <div class="form-group">
-                                    <label for=" productSelector" class="form-label title-box">Selector de productos financieros:</label>
-                                    <select id="productSelector" class="form-select">
-                                        <option value="">Seleccione una opción</option>
-                                    </select>
-                                </div>   
-                            </div>
-                        </div> 
-                        <div class="container text-center mb-5">
-                            <div class="row align-items-start">
-                                <div class="col">
-                                    <label for="loanRange" class="form-label title-box">Monto (Pago):</label>
-                                    <span id="selectedAmount" >$0</span>
-                                    <input type="range" id="loanRange" class="form-range" step="1" oninput="updateAmountDisplay(this.value)">
-                                    <div class="d-flex justify-content-between">
-                                      <span id="minAmountLabel">Monto mínimo:</span>
-                                      <span id="maxAmountLabel">Monto máximo:</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row align-items-start mt-3">
-                                <div class="col">
-                                    <label for="loanTerm" class="form-label title-box">Plazo (meses):</label>
-                                    <span id="selectedTerm" >0 meses</span>
-                                    <input type="range" id="loanTerm" class="form-range" step="1" oninput="updateTermDisplay(this.value)">
-                                    <div class="d-flex justify-content-between">
-                                      <span id="minTermLabel">Plazo mínimo:</span>
-                                      <span id="maxTermLabel">Plazo máximo:</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex gap-2 btns">
-                                    <a class="btn btn-regresar" onclick="handleRegresar()">Regresar</a>
-                                    <button class="btn btnCalculo" onclick="guardarDatos(); handContinue();">Continuar</button>
-
-                                </div>
-                            </div>
-                        </div>  
+         
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                    <div class="form-group">
+                        <select id="personType" class="form-select" onchange="handleSelectionChange(this)">
+                            <option value="moral">Persona Moral</option>
+                            <option value="fisica">Persona Física con Actividad Empresarial</option>
+                        </select>
                     </div>
-                    <div class="col-md-6">
-                        <div class="col-md-12 mb-5">
-                            <div class="card-body custom-card bordered-card ">
-                                <div class="text-center title-box">
-                                    <h3>Detalles de la Solicitud </h3>
+                    <div class="form-group ">
+                        <label for="productSelector" class="form-label title-box">Selector de productos financieros:</label>
+                        <select id="productSelector" class="form-select">
+                            <option value="">Seleccione una opción</option>
+                        </select>
+                    </div>
+                    <div class="text-center mb-5">
+                        <div class="form-group">
+                                <label for="loanRange" class="form-label title-box">Monto (Pago):</label>
+                                <span id="selectedAmount">$0</span>
+                                <input type="range" id="loanRange" class="form-range" step="1" oninput="updateAmountDisplay(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span id="minAmountLabel">Monto mínimo:</span>
+                                    <span id="maxAmountLabel">Monto máximo:</span>
                                 </div>
-                                <div class="container text-center">
-                                    <small id="loanR" class="d-flex justify-content-center title-box">Monto (Pago):</small>
-                                    <span id="selectedAmountLabel" class="resultado d-flex justify-content-center fs-1 ">$0</span>
-                                  </div>
-                                  <div class="row">
-                                        <div class="col-6">
-                                            <small class="d-flex justify-content-center title-box">Plazo (meses):</small>
-                                           <span id="selectedTermLabel2" class="d-flex justify-content-center fs-1 resultado-card">0 meses</span> 
-                                          </div>
-                                          <div class="col-6">
-                                            <small class="d-flex justify-content-center title-box">Pago menzual aproximado</small>
-                                            <span class="d-flex justify-content-center fs-1 resultado-card ">$846,875 </span>
-                                        </div>   
-                                 </div>
-                             </div>
-                        </div>        
-                    </div>     
+                        </div>
+        
+                        <div class="form-group mt-3">
+                                <label for="loanTerm" class="form-label title-box">Plazo (meses):</label>
+                                <span id="selectedTerm">0 meses</span>
+                                <input type="range" id="loanTerm" class="form-range" step="1" oninput="updateTermDisplay(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span id="minTermLabel">Plazo mínimo:</span>
+                                    <span id="maxTermLabel">Plazo máximo:</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2 btns">
+                        <a class="btn btn-regresar" onclick="handleRegresar()">Regresar</a>
+                        <button class="btn btnCalculo" onclick="guardarDatos(); handContinue();">Continuar</button>
+                    </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="col-md-12 mb-5">
+                        <div class="card-body custom-card bordered-card">
+                            <div class="text-center ">
+                                <h3 class="title-box-s">Detalles de la Solicitud</h3>
+                            </div>
+                            <div class="text-center">
+                                <small id="loanR" class="d-flex justify-content-center  title-box">Monto (Pago):</small>
+                                <span id="selectedAmountLabel" class="resultado d-flex justify-content-center">$0</span>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <small class="d-flex justify-content-center  title-box">Plazo (meses):</small>
+                                    <span id="selectedTermLabel2" class="d-flex justify-content-center fs-1 resultado-card">0 meses</span> 
+                                </div>
+                                <div class="col-6">
+                                    <small class="d-flex justify-content-center title-box">Pago mensual aproximado</small>
+                                    <span class="d-flex justify-content-center fs-1 resultado-card">$846,875</span>
+                                  </div>  
+                            </div>
+                        </div>
+                    </div>        
+                </div>     
             </div>
+        </div>
     </main>
     <script src="script.js"></script>
     <script src="resultados.js"></script>
