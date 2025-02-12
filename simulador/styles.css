@@ -47,9 +47,11 @@ button:hover {
     border-radius: 30px;
     border: none;
     background-color: #3EB1C8;
-    padding: 2.5rem 2.5rem;
+    padding: 3.8rem 3.8rem;
     color: white;
+
 }
+
 .resultado{
     font-size: 3.4em;
 }
