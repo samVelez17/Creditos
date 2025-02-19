@@ -1,4 +1,9 @@
 // Nueva función para actualizar el monto en tiempo real
+document.addEventListener("DOMContentLoaded", () => {
+    agregarEventosDeValidacion();
+    actualizarCard();
+});
+
 function actualizarMonto() {
     const loanRange = parseFloat(document.getElementById("loanRange")?.value) || 0;
     const amountElement = document.getElementById("selectedAmount");

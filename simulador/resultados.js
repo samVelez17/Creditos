@@ -1,6 +1,6 @@
 
 // Datos del formulario que el Usuario llena
-function guardarDatos(event) {
+/* function guardarDatos(event) {
     // Prevenir la acción predeterminada del enlace (evitar la redirección antes de guardar los datos)
     event.preventDefault();
 
@@ -40,4 +40,4 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('Correo').textContent = representativeEmail || "No disponible";
     document.getElementById('Phone').textContent = representativePhone || "No disponible";
     
-});
+});*/

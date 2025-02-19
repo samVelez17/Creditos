@@ -21,123 +21,88 @@ window.onload = function () {
     } 
 };
 
+document.addEventListener("DOMContentLoaded", async function () {
+    const apiURL = "https://gestion-ucg.lerco.agency/web/v1/catalogos/get-producto";
+    const productSelector = document.getElementById('productSelector');
+    const loanAmountRange = document.getElementById('loanRange');
+    const loanTermRange = document.getElementById('loanTerm');
 
-const products = [
-    {
-        id: "11",
-        nombre_producto: "Crédito a empresas del sector automotriz y de autopartes",
-        monto_max: 60000000,
-        monto_min: 1000000,
-        plazo_max: 60,
-        plazo_min: 12
-    },
-    {
-        id: "10",
-        nombre_producto: "Crédito Construcción de inmuebles",
-        monto_max: 60000000,
-        monto_min: 1000000,
-        plazo_max: 120,
-        plazo_min: 12
-    },
-    {
-        id: "9",
-        nombre_producto: "Crédito Sustentable",
-        monto_max: 60000000,
-        monto_min: 1000000,
-        plazo_max: 180,
-        plazo_min: 12
-    },
-    {
-        id: "8",
-        nombre_producto: "Crédito para Adquisición de Maquinaria y Equipo",
-        monto_max: 60000000,
-        monto_min: 1000000,
-        plazo_max: 60,
-        plazo_min: 12
-    },
-    {
-        id: "7",
-        nombre_producto: "Crédito para Capital de trabajo",
-        monto_max: 60000000,
-        monto_min: 1000000,
-        plazo_max: 60,
-        plazo_min: 12
+
+    try {
+        const response = await fetch(apiURL);
+        
+        const products = await response.json();
+
+        // Llenar el selector con productos obtenidos
+        products.forEach(product => {
+            const option = document.createElement('option');
+            option.value = product.id;
+            option.textContent = product.nombre_producto;
+            productSelector.appendChild(option);
+        });
+
+        productSelector.addEventListener('change', event => {
+            const selectedProduct = products.find(product => product.id === event.target.value);
+            if (selectedProduct) {
+                updateProductDetails(selectedProduct);
+            }
+        });
+
+        loanAmountRange.addEventListener('input', event => {
+            updateAmountDisplay(event.target.value);
+        });
+
+        loanTermRange.addEventListener('input', event => {
+            updateTermDisplay(event.target.value);
+        });
+
+    } catch (error) {
+        console.error("Error al cargar los productos:", error);
     }
-];
 
-const productSelector = document.getElementById('productSelector');
-const loanAmountRange = document.getElementById('loanRange');
-const loanTermRange = document.getElementById('loanTerm');
+    
 
-products.forEach(product => {
-    const option = document.createElement('option');
-    option.value = product.id;
-    option.textContent = product.nombre_producto;
-    productSelector.appendChild(option);
-});
+    function updateProductDetails(product) {
+        loanAmountRange.min = product.monto_min;
+        loanAmountRange.max = product.monto_max;
+        loanAmountRange.value = product.monto_min;
 
-productSelector.addEventListener('change', event => {
-    const selectedProduct = products.find(product => product.id === event.target.value);
-    if (selectedProduct) {
-        loanAmountRange.min = selectedProduct.monto_min;
-        loanAmountRange.max = selectedProduct.monto_max;
-        loanAmountRange.value = selectedProduct.monto_min;
-
-        loanTermRange.min = selectedProduct.plazo_min;
-        loanTermRange.max = selectedProduct.plazo_max;
-        loanTermRange.value = selectedProduct.plazo_min;
+        loanTermRange.min = product.plazo_min;
+        loanTermRange.max = product.plazo_max;
+        loanTermRange.value = product.plazo_min;
 
         const formatter = new Intl.NumberFormat('es-MX', {
             style: 'currency',
             currency: 'MXN',
         });
 
-        document.getElementById('minAmountLabel').textContent = `Monto mínimo: ${formatter.format(selectedProduct.monto_min)}`;
-        document.getElementById('maxAmountLabel').textContent = `Monto máximo: ${formatter.format(selectedProduct.monto_max)}`;
+        document.getElementById('minAmountLabel').textContent = `Monto mínimo: ${formatter.format(product.monto_min)}`;
+        document.getElementById('maxAmountLabel').textContent = `Monto máximo: ${formatter.format(product.monto_max)}`;
 
-        document.getElementById('minTermLabel').textContent = `Plazo mínimo: ${selectedProduct.plazo_min} meses`;
-        document.getElementById('maxTermLabel').textContent = `Plazo máximo: ${selectedProduct.plazo_max} meses`;
+        document.getElementById('minTermLabel').textContent = `Plazo mínimo: ${product.plazo_min} meses`;
+        document.getElementById('maxTermLabel').textContent = `Plazo máximo: ${product.plazo_max} meses`;
 
-        updateAmountDisplay(selectedProduct.monto_min);
-        updateTermDisplay(selectedProduct.plazo_min);
+        updateAmountDisplay(product.monto_min);
+        updateTermDisplay(product.plazo_min);
     }
+
+    function updateAmountDisplay(value) {
+        const formatter = new Intl.NumberFormat('es-MX', {
+            style: 'currency',
+            currency: 'MXN',
+        });
+        document.getElementById('selectedAmount').textContent = formatter.format(value);
+    }
+
+    function updateTermDisplay(value) {
+        document.getElementById('selectedTerm').textContent = `${value} meses`;
+    }
+
+    let currencyFormat = new Intl.NumberFormat("es-MX", {
+        style: "currency",
+        currency: "MXN",
+        maximumFractionDigits: 0
+    });
+
+    
 });
-
-loanAmountRange.addEventListener('input', event => {
-    updateAmountDisplay(event.target.value);
-});
-
-loanTermRange.addEventListener('input', event => {
-    updateTermDisplay(event.target.value);
-});
-
-function updateAmountDisplay(value) {
-    const formatter = new Intl.NumberFormat
-        ('es-MX',
-            {
-                style: 'currency',
-                currency: 'MXN',
-            });
-
-    document.getElementById('selectedAmount').textContent = formatter.format(value);
-}
-
-
-function updateTermDisplay(value) {
-    document.getElementById('selectedTerm').textContent = `${value} meses`;
-}
-
-let currencyFormat = new Intl.NumberFormat("es-MX", {
-    style: "currency",
-    currency: "MXN",
-    maximumFractionDigits: 0
-})
-
-const inputMonto = document.getElementById('representativeMonto');
-inputMonto.addEventListener('input', function () {
-    inputMonto.value = inputMonto.value.replace(/[^0-9]/g, '');
-});
-function updateMonto(monto) {
-    monto = document.getElementById('representativeMonto').value;
-    document.getElementById('monto').textContent = currencyFormat.format(monto);
-}
